@@ -5,14 +5,14 @@ let media = document.getElementById("video");
 function initialize() {
 
     // Checks for start time
-    startTimeFunction();
+    retrieveStartTime();
 
     // Constantly updates media current time
-    media.addEventListener('timeupdate', function () {
+    media.addEventListener('timeupdate', function() {
         mediaCurrentTime = this.currentTime;
 
         // Pauses and resets media if current time matches end time
-        if(Math.floor(mediaCurrentTime) === endTime) {
+        if(Math.round(mediaCurrentTime) === Math.round(endTime)) {
             playPause();
             replay();
         }

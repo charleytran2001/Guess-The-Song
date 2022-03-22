@@ -1,14 +1,6 @@
-// function playbackLengthFunction() {
-//     if(playbackFull) {
-//         startTimeFunction();
-//     } else {
-//         playbackLength
-//     }
-// }
-
 // User control variables
-let randomStartTime = true;
-let playbackFull = true;
+let randomStartTime = false;
+let playbackFull = false;
 
 // Function to reset current time in video/song
 function replay() {
