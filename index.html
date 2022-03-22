@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="media">
-        <video id="video" width="640" height="480" controls>
+        <video id="video" width="640" height="480" controls preload="none">
             <source src="../media/videos/test.mp4" type="video/mp4">
         </video>
     </div>
@@ -19,10 +19,26 @@
         <button id="replay" onclick="replay()">Replay</button>
         <button id="playPause" onclick="playPause()">Play/Pause</button>
         <button id="next">Next</button>
+
+        <label for="randomStart">Random Start: </label>
+        <select onchange="reload()" name="selection" id="randomStart">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select>
+
+        <label for="mediaLength">Song Length: </label>
+        <select name="selection" id="mediaLength">
+            <option value="full">Full</option>
+            <option value="10">10 Seconds</option>
+            <option value="5">5 Seconds</option>
+            <option value="3">3 Seconds</option>
+            <option value="1">1 Seconds</option>
+        </select>
     </div>
 
     <script src="./js/controls.js"></script>
     <script src="./js/time.js"></script>
     <script src="./js/initialize.js"></script>
+    <script src="./js/reload.js"></script>
 </body>
 </html>

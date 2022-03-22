@@ -5,7 +5,7 @@ let mediaCurrentTime = startTime;
 let playbackLength = 10;
 let endTime;
 
-function retrieveStartTime() {
+function retrieveMediaTime() {
     // Retreives total length of media
     media.addEventListener('loadedmetadata', function() {
         mediaDuration = this.duration;
@@ -21,10 +21,10 @@ function retrieveStartTime() {
                 media.currentTime = startTime;
             }
             endTime = mediaDuration;
-            console.log("Full: " + endTime);
-            
+            // console.log("Full: " + endTime);
+
         // Otherwise it makes sure that the playback length doesn't go past song length
-        } else {            
+        } else {
             if(randomStartTime) {
                 startTime = Math.floor(Math.random() * (mediaDuration - playbackLength));
                 media.currentTime = startTime;
@@ -33,8 +33,7 @@ function retrieveStartTime() {
                 media.currentTime = startTime;
             }
             endTime = startTime + playbackLength;
-            console.log("Partial: " + endTime);
+            // console.log("Partial: " + endTime);
         }
     });
 }
-

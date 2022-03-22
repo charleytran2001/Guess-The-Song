@@ -1,6 +1,18 @@
 // User control variables
 let randomStartTime = false;
-let playbackFull = false;
+let playbackFull = true;
+
+function checkControls() {
+    if(document.getElementById("randomStart").value == "false") {
+        randomStartTime = false;
+        // Checks for various timings of media
+        retrieveMediaTime();
+    } else if(document.getElementById("randomStart").value == "true"){
+        randomStartTime = true;
+        // Checks for various timings of media
+        retrieveMediaTime();
+    }
+}
 
 // Function to reset current time in video/song
 function replay() {

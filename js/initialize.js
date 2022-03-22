@@ -4,8 +4,11 @@ let media = document.getElementById("video");
 // Starting commands
 function initialize() {
 
-    // Checks for start time
-    retrieveStartTime();
+    // Loads media
+    media.load();
+
+    // Checks for user settings
+    checkControls();
 
     // Constantly updates media current time
     media.addEventListener('timeupdate', function() {
