@@ -2,12 +2,10 @@
 let media = document.getElementById("video");
 
 // Time Variables
-let startTime = 0;
-let currentTime = startTime;
-let playbackLength = 3;
+let startTime = 10;
+let mediaCurrentTime = startTime;
+let playbackLength = 5;
 let endTime = startTime + playbackLength;
-
-let timer;
 
 // Function to reset current time in video/song
 function replay() {
@@ -21,25 +19,31 @@ function replay() {
 function playPause() {
     if(media.paused) {
         // Starts media
-        console.log("start: " + media.currentTime);
         media.play();
-
-        // Starts timer
-        timer = setInterval(function() {
-            currentTime++;
-            console.log(currentTime);
-        }, 1000);
     } else {
         // Stops media
-        currentTime = Math.floor(media.currentTime);
-        console.log("end: " + currentTime);
         media.pause();
-
-        // Stops timer
-        clearInterval(timer);
     }
 }
 
-// if(currentTime == 3) {
-//     playPause();
-// }
+// Starting commands
+function initialize() {
+    // Starts media at specified start time
+    media.currentTime = startTime;
+
+    // Constantly updates media current time
+    media.addEventListener('timeupdate', function () {
+        mediaCurrentTime = this.currentTime;
+
+        // Pauses and resets media if current time matches end time
+        if(Math.floor(mediaCurrentTime) === endTime) {
+            playPause();
+            replay();
+        }
+    });
+
+}
+
+// Starts Program
+initialize();
+
