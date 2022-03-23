@@ -15,10 +15,10 @@
     </div>
 
     <div id="controls">
-        <button id="back">Back</button>
+        <button id="back" onclick="back()">Back</button>
         <button id="replay" onclick="replay()">Replay</button>
         <button id="playPause" onclick="playPause()">Play/Pause</button>
-        <button id="next">Next</button>
+        <button id="next" onclick="next()">Next</button>
 
         <label for="randomStart">Random Start: </label>
         <select onchange="reload()" name="selection" id="randomStart">
@@ -34,8 +34,11 @@
             <option value="3">3 Seconds</option>
             <option value="1">1 Seconds</option>
         </select>
+
+        <button id="reload" onclick="reload()">Reload</button>
     </div>
 
+    <script src="./js/switch.js"></script>
     <script src="./js/controls.js"></script>
     <script src="./js/time.js"></script>
     <script src="./js/initialize.js"></script>
