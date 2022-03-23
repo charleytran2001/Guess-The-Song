@@ -4,11 +4,11 @@ let currentPath;
 function next() {
     counter++;
     currentPath = "../media/videos/test" + counter + ".mp4";
-    media.setAttribute('src', currentSrc);
+    media.setAttribute('src', currentPath);
 }
 
 function back() {
     counter--;
     currentPath = "../media/videos/test" + counter + ".mp4";
-    media.setAttribute('src', currentSrc);
+    media.setAttribute('src', currentPath);
 }
