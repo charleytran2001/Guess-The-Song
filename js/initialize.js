@@ -10,6 +10,9 @@ function initialize() {
     // Checks for user settings
     checkControls();
 
+    // Checks for various timings of media
+    retrieveMediaTime();
+
     // Constantly updates media current time
     media.addEventListener('timeupdate', function() {
         mediaCurrentTime = this.currentTime;

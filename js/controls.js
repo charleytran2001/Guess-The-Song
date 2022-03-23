@@ -16,9 +16,6 @@ function checkControls() {
         playbackFull = false;
         playbackLength = parseInt(document.getElementById("mediaLength").value);
     }
-
-    // Checks for various timings of media
-    retrieveMediaTime();
 }
 
 // Function to reset current time in video/song

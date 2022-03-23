@@ -1,15 +1,14 @@
 // Time Variables
 let startTime = 0;
-let mediaDuration;
-let mediaCurrentTime = startTime;
-let playbackLength = 0;
 let endTime;
+let playbackLength = 0;
+let mediaCurrentTime = startTime;
+let mediaDuration;
 
 function retrieveMediaTime() {
     // Retreives total length of media
     media.addEventListener('durationchange', function() {
         mediaDuration = this.duration;
-        // console.log("Length: " + mediaDuration);
         
         // If playback is set to full song, then it plays until the end
         if(playbackFull) {
@@ -21,7 +20,6 @@ function retrieveMediaTime() {
                 media.currentTime = startTime;
             }
             endTime = mediaDuration;
-            // console.log("Full: " + endTime);
 
         // Otherwise it makes sure that the playback length doesn't go past song length
         } else {
@@ -33,7 +31,6 @@ function retrieveMediaTime() {
                 media.currentTime = startTime;
             }
             endTime = startTime + playbackLength;
-            // console.log("Partial: " + endTime);
         }
     });
 }
