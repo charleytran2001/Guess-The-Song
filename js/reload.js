@@ -8,7 +8,7 @@ function reload() {
     startTime = 0;
     mediaDuration;
     mediaCurrentTime = startTime;
-    playbackLength = 10;
+    playbackLength = 0;
     endTime;
 
     initialize();

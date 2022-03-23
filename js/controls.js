@@ -2,20 +2,31 @@
 let randomStartTime = false;
 let playbackFull = true;
 
+// Assigns variable values depending on user selection
 function checkControls() {
     if(document.getElementById("randomStart").value == "false") {
         randomStartTime = false;
-        // Checks for various timings of media
-        retrieveMediaTime();
-    } else if(document.getElementById("randomStart").value == "true"){
+    } else {
         randomStartTime = true;
-        // Checks for various timings of media
-        retrieveMediaTime();
     }
+
+    if(document.getElementById("mediaLength").value == "full") {
+        playbackFull = true;
+    } else {
+        playbackFull = false;
+        playbackLength = parseInt(document.getElementById("mediaLength").value);
+    }
+
+    // Checks for various timings of media
+    retrieveMediaTime();
 }
 
 // Function to reset current time in video/song
 function replay() {
+    if(media.play) {
+        // Stops media
+        media.pause();
+    }
     // Resets video time
     media.currentTime = startTime;
     // Resets variable time

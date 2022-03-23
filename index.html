@@ -10,7 +10,7 @@
 <body>
     <div id="media">
         <video id="video" width="640" height="480" controls preload="none">
-            <source src="../media/videos/test.mp4" type="video/mp4">
+            <source src="../media/videos/test1.mp4" type="video/mp4">
         </video>
     </div>
 
@@ -27,7 +27,7 @@
         </select>
 
         <label for="mediaLength">Song Length: </label>
-        <select name="selection" id="mediaLength">
+        <select onchange="reload()" name="selection" id="mediaLength">
             <option value="full">Full</option>
             <option value="10">10 Seconds</option>
             <option value="5">5 Seconds</option>
