@@ -1,15 +1,14 @@
 let counter = 1;
-let currentSrc;
+let currentPath;
 
 function next() {
     counter++;
-    currentSrc = "../media/videos/test" + counter + ".mp4";
+    currentPath = "../media/videos/test" + counter + ".mp4";
     media.setAttribute('src', currentSrc);
 }
 
 function back() {
     counter--;
-    currentSrc = "../media/videos/test" + counter + ".mp4";
+    currentPath = "../media/videos/test" + counter + ".mp4";
     media.setAttribute('src', currentSrc);
 }
-
