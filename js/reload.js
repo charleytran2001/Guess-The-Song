@@ -1,3 +1,4 @@
+// Reloads media
 function reload() {
     // Resets Time Variables
     startTime = 0;

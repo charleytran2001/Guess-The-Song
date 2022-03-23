@@ -10,7 +10,7 @@ function retrieveMediaTime() {
     media.addEventListener('durationchange', function() {
         mediaDuration = this.duration;
         
-        // If playback is set to full song, then it plays until the end
+        // If playback is set to full song, it plays until the end
         if(playbackFull) {
             if(randomStartTime) {
                 startTime = Math.floor(Math.random() * mediaDuration);
@@ -21,7 +21,7 @@ function retrieveMediaTime() {
             }
             endTime = mediaDuration;
 
-        // Otherwise it makes sure that the playback length doesn't go past song length
+        // Otherwise it makes sure that the playback length doesn't go past song length by adjusting the starting time
         } else {
             if(randomStartTime) {
                 startTime = Math.floor(Math.random() * (mediaDuration - playbackLength));

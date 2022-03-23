@@ -8,24 +8,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Div to hold video / song thumbnail -->
     <div id="media">
-        <video id="video" width="1280" height="720" preload="none">
+        <video id="video" width="1280" height="720" controls preload="none">
             <source src="../media/videos/test1.mp4" type="video/mp4">
         </video>
     </div>
 
+    <!-- Div to hold all user controls -->
     <div id="controls">
         <button id="back" onclick="back()">Back</button>
         <button id="replay" onclick="replay()">Replay</button>
         <button id="playPause" onclick="playPause()">Play/Pause</button>
+        <button id="reload" onclick="reload()">Reload</button>
         <button id="next" onclick="next()">Next</button>
 
+        <!-- Selection for random start -->
         <label for="randomStart">Random Start: </label>
         <select onchange="reload()" name="selection" id="randomStart">
             <option value="false">False</option>
             <option value="true">True</option>
         </select>
 
+        <!-- Selection for song length -->
         <label for="mediaLength">Song Length: </label>
         <select onchange="reload()" name="selection" id="mediaLength">
             <option value="full">Full</option>
@@ -34,8 +39,6 @@
             <option value="3">3 Seconds</option>
             <option value="1">1 Seconds</option>
         </select>
-
-        <button id="reload" onclick="reload()">Reload</button>
     </div>
 
     <script src="./js/switch.js"></script>
