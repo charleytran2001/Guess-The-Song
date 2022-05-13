@@ -8,31 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Div to hold video / song thumbnail -->
-    <div id="media">
+    <!-- Div to hold video -->
+    <div id="video-container">
         <video id="video" width="1280" height="720" controls preload="none">
             <source src="../media/videos/test1.mp4" type="video/mp4">
         </video>
     </div>
 
     <!-- Div to hold all user controls -->
-    <div id="controls">
-        <button id="back" onclick="back()">Back</button>
-        <button id="replay" onclick="replay()">Replay</button>
-        <button id="playPause" onclick="playPause()">Play/Pause</button>
-        <button id="reload" onclick="reload()">Reload</button>
-        <button id="next" onclick="next()">Next</button>
+    <div id="control-container">
+        <button class="video-button" id="back" onclick="back()">Back</button>
+        <button class="video-button" id="replay" onclick="replay()">Replay</button>
+        <button class="video-button" id="play-pause" onclick="playPause()">Play/Pause</button>
+        <button class="video-button" id="reload" onclick="reload()">Reload</button>
+        <button class="video-button" id="next" onclick="next()">Next</button>
 
         <!-- Selection for random start -->
-        <label for="randomStart">Random Start: </label>
-        <select onchange="reload()" name="selection" id="randomStart">
+        <label for="random-start">Random Start: </label>
+        <select onchange="reload()" name="selection" id="random-start">
             <option value="false">False</option>
             <option value="true">True</option>
         </select>
 
-        <!-- Selection for song length -->
-        <label for="mediaLength">Song Length: </label>
-        <select onchange="reload()" name="selection" id="mediaLength">
+        <!-- Selection for video length -->
+        <label for="video-length">Song Length: </label>
+        <select onchange="reload()" name="selection" id="video-length">
             <option value="full">Full</option>
             <option value="10">10 Seconds</option>
             <option value="5">5 Seconds</option>
@@ -41,10 +41,13 @@
         </select>
     </div>
 
-    <script src="./js/switch.js"></script>
-    <script src="./js/controls.js"></script>
-    <script src="./js/time.js"></script>
+    <script src="./js/controls/playPause.js"></script>
+    <script src="./js/controls/reload.js"></script>
+    <script src="./js/controls/replay.js"></script>
+    <script src="./js/controls/switch.js"></script>
+    <script src="./js/timing/checkControls.js"></script>
+    <script src="./js/timing/retrieveVideoTime.js"></script>
     <script src="./js/initialize.js"></script>
-    <script src="./js/reload.js"></script>
+    
 </body>
 </html>

@@ -1,24 +1,41 @@
-// Variable to store current video/song
-let media = document.getElementById("video");
+// Variable to store current video
+let video = document.getElementById("video");
+
+// User control variables
+let randomStartTime = false;
+let playbackFull = true;
+
+// Time Variables
+let startTime = 0;
+let endTime;
+let playbackLength = 0;
+let videoCurrentTime = startTime;
+let videoDuration;
+
+// Video Path (change later)
+let counter = 1;
+let currentPath;
+
+
 
 // Starting commands
 function initialize() {
 
-    // Loads media
-    media.load();
+    // Loads video
+    video.load();
 
     // Checks for user settings
     checkControls();
 
-    // Checks for various media timings
-    retrieveMediaTime();
+    // Checks for various video timings
+    retrieveVideoTime();
 
-    // Constantly checks for current time of media
-    media.addEventListener('timeupdate', function() {
-        mediaCurrentTime = this.currentTime;
+    // Constantly checks for current time of video
+    video.addEventListener('timeupdate', function() {
+        videoCurrentTime = this.currentTime;
 
-        // Pauses and resets media if current time matches end time
-        if(Math.round(mediaCurrentTime) === Math.round(endTime)) {
+        // Pauses and resets video if current time matches end time
+        if(Math.round(videoCurrentTime) === Math.round(endTime)) {
             playPause();
             replay();
         }
