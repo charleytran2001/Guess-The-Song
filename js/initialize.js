@@ -13,13 +13,20 @@ let videoCurrentTime = startTime;
 let videoDuration;
 
 // Video Path (change later)
-let counter = 1;
+let counter = 0;
+let randomVideoNum = 0;
+let videoArr = [];
 let currentPath;
 
 
 
 // Starting commands
 function initialize() {
+
+    randomVideoNum = Math.round(Math.random() * (3 - 1) + 1);
+    videoArr.push(randomVideoNum);
+    currentPath = "./songs/" + videoArr[counter] + ".mp4";
+    video.setAttribute('src', currentPath);
 
     // Loads video
     video.load();

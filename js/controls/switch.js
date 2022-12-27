@@ -1,13 +1,15 @@
 function next() {
     counter++;
-    currentPath = "../media/videos/test" + counter + ".mp4";
+    currentPath = "./songs/" + videoArr[counter] + ".mp4";
     video.setAttribute('src', currentPath);
     reload();
 }
 
 function back() {
-    counter--;
-    currentPath = "../media/videos/test" + counter + ".mp4";
-    video.setAttribute('src', currentPath);
-    reload();
+    if(counter !== 0) {
+        counter--;
+        currentPath = "./songs/" + videoArr[counter] + ".mp4";
+        video.setAttribute('src', currentPath);
+        reload();
+    }
 }

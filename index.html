@@ -10,8 +10,10 @@
 <body>
     <!-- Div to hold video -->
     <div id="video-container">
-        <video id="video" width="1280" height="720" controls preload="none">
-            <source src="../media/videos/test1.mp4" type="video/mp4">
+        <video id="place-holder" width="852" height="480"><source src="./songs/1.mp4" type="video/mp4"></video>
+
+        <video id="video" width="852" height="480" preload="none">
+            <!-- <source src="./songs/1.mp4" type="video/mp4"> -->
         </video>
     </div>
 
@@ -39,8 +41,11 @@
             <option value="3">3 Seconds</option>
             <option value="1">1 Seconds</option>
         </select>
+
+        <button id="toggle-video" onclick="toggleVideo()">Toggle Video</button>
     </div>
 
+    <script src="./js/controls/toggleVideo.js"></script>
     <script src="./js/controls/playPause.js"></script>
     <script src="./js/controls/reload.js"></script>
     <script src="./js/controls/replay.js"></script>
